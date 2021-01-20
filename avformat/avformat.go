@@ -21,8 +21,8 @@ import "C"
 import (
 	"unsafe"
 
-	"github.com/giorgisio/goav/avcodec"
-	"github.com/giorgisio/goav/avutil"
+	"github.com/la880703/goav/avcodec"
+	"github.com/la880703/goav/avutil"
 )
 
 type (
@@ -188,7 +188,7 @@ func AvformatOpenInput(ps **Context, fi string, fmt *InputFormat, d **avutil.Dic
 	Cfi := C.CString(fi)
 	defer C.free(unsafe.Pointer(Cfi))
 
-	return int(C.avformat_open_input((**C.struct_AVFormatContext)(unsafe.Pointer(ps)), Cfi, (*C.struct_AVInputFormat)(fmt), (**C.struct_AVDictionary)(unsafe.Pointer(d))))
+	return int(C.avformat_open_input((**C.struct_AVFormatContext)(unsafe.Pointer(ps)), Cfi, (*C.struct_AVInputFormat)(unsafe.Pointer(fmt)), (**C.struct_AVDictionary)(unsafe.Pointer(d))))
 }
 
 //Return the output format in the list of registered output formats which best matches the provided parameters, or return NULL if there is no match.

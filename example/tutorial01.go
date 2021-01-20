@@ -25,11 +25,11 @@ import (
 	"os"
 	"unsafe"
 
-	"github.com/giorgisio/goav/swscale"
+	"github.com/la880703/goav/swscale"
 
-	"github.com/giorgisio/goav/avcodec"
-	"github.com/giorgisio/goav/avformat"
-	"github.com/giorgisio/goav/avutil"
+	"github.com/la880703/goav/avcodec"
+	"github.com/la880703/goav/avformat"
+	"github.com/la880703/goav/avutil"
 )
 
 // SaveFrame writes a single frame to disk as a PPM file
